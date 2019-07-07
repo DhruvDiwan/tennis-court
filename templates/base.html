@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- {% load static %} -->
+<html>
+<head>
+  <title>RA Tennis {% block pageTitle %}{% endblock pageTitle %}</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:ǓǏǏ"
+  rel="stylesheet">
+  <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+<body>
+  <div>
+    <header>
+      <div class="nav-left">
+        <h1><a href="{% url 'home' %}">Tennis Training</a></h1>
+      </div>
+      <!-- <div class="nav-right"> -->
+      <!-- <a href="{7% url 'post_new' %7}">+ New Blog Post</a> -->
+      <!-- </div> -->
+    </header>
+    <p>abcdefgh@A1</p>
+    {% if user.is_authenticated %}
+      <p>Hi {{ user.username }}!</p>
+      <a href="{% url 'logout' %}">Log out</a>
+    {% else %}
+      <p>You are not logged in.</p>
+      <a href="{% url 'login' %}">Log In</a> |
+      <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
+       | <a href="/admin">Administration</a>
+    <!-- CONTENT BLOCK -->
+    {% block content %}
+    {% endblock content %}
+  </div>
+</body>
+</html>

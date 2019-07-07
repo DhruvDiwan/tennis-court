@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <title>Log In | Sign Up</title>
+  <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/homeError.js' %}"></script>
+
+</head>
+<body>
+  <h1>Tennis Training</h1>
+  <form  name="Login form" action="" onsubmit="return validate_login()" method="post"  target="_blank" >
+    {% csrf_token %}
+    <fieldset>
+      <legend>Log In</legend>
+      <br>
+      <input type="text" placeholder="Username" name="Username" value="">
+      <br><br>
+      <input type="email" placeholder="E-mail " name="E-mail" value="">
+      <br><br>
+      <input type="submit" value="Login" name="Submit">
+      <!-- <button type="submit" name="button">Log In</button> -->
+    </fieldset>
+  </form>
+
+  <br><br><br><br>
+
+  <form  method="post" action="/addUser" target="_blank" name="Signup form" onsubmit="return validate_signUp()">
+    {% csrf_token %}
+    <fieldset>
+      <legend><big><pre>New Student ?
+        Sign Up now</pre></big></legend>
+        <pre>                                                                                               * Required Fields</pre>
+        <pre>*<input type="text" placeholder="First Name" name="fName" value="{{ fname }}">      *<input type="text" placeholder="Surname" name="sName" value="{{ sname }}"></pre>
+        <pre> <input type="text" placeholder="New Username" name="username" value="{{ username }}"></pre>
+        <pre>*<input type="email" placeholder="E-mail Address" name="E-mail" value="{{ email }}"></pre>
+        <pre>*<input type="tel" placeholder="Mobile No" name="mobNo" value="{{ mobNumber }}" pattern="[0-9]{10}" required></pre>
+        <pre>*<input type="password" placeholder="New Password" name="New pass" value="{{ newPass }}" minlength="8" required>      *<input type="password" placeholder="Confirm Password" name="Confirm pass" value="{{ confPass }}"></pre>
+        <br>
+        <input type="submit" value="Sign Up" name="Submit">
+        <br><br>
+        {% if error  == 'existingUsername' %}
+        <script type="text/javascript">
+        existingUsername();
+        </script>
+        {% endif %}
+      </fieldset>
+    </form>
+
+    <br><br>
+  </body>
+  </html>
