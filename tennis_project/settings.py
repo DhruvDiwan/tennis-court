@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # 'register.apps.RegisterConfig',
     # 'accounts.apps.AccountsConfig',
     'users.apps.UsersConfig',
+    'address',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,5 @@ PHONENUMBER_DEFAULT_REGION = 'IN'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+GOOGLE_API_KEY = 'AIzaSyD6tyos95rfKfdJSi5wYajNBzTt1_6C6rg'

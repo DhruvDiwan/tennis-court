@@ -1,10 +1,14 @@
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from address.models import AddressField
 
 class CustomUser(AbstractUser):
-    age = models.PositiveIntegerField(null=True, blank=True)
-    phone = PhoneNumberField(null=True, blank=False, unique=True)
-    FirstName = models.CharField(null=False, verbose_name="First Name" , max_length=300)
-    Surname = models.CharField(null=False, max_length=300)
-    
+    middle_name = models.CharField(null = True, max_length=300)
+    date_of_birth = models.DateField(null = True)
+    address = AddressField(null = True, on_delete = models.CASCADE)
+    mobile = PhoneNumberField(null = True)
+    telephone = PhoneNumberField(null = True)
+    intercom = models.CharField(null = True, max_length=300)
+    # relations = models.ForeignKey(CustomUser, on_delete = models.CASCADE,)
