@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b0909109310397780ad700bf79d2324cbfa6952f8aad2eb0bf4e65c523aac5b8"
+            "sha256": "dd54b6daa4238a5da4e6b17058dc130f36d340581d4a0344b85804d7a00b9190"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -39,13 +39,21 @@
             "index": "pypi",
             "version": "==3.0.1"
         },
-        "phonenumbers": {
+        "gunicorn": {
             "hashes": [
-                "sha256:81757480b3553e9aa8b7442f28fc53e7c8335ef8c99c3b292bcd55b08820aa00",
-                "sha256:cb1d559b3f63cef4e8521f9ebeb4f41a0320f97463f3b11c15bd7d1d3e0f40db"
+                "sha256:aa8e0b40b4157b36a5df5e599f45c9c76d6af43845ba3b3b0efe2c70473c2471",
+                "sha256:fa2662097c66f920f53f70621c6c58ca4a3c4d3434205e608e121b5b3b71f4f3"
             ],
             "index": "pypi",
-            "version": "==8.10.14"
+            "version": "==19.9.0"
+        },
+        "phonenumbers": {
+            "hashes": [
+                "sha256:617b9127dc6fd29765ca122915d3b603131446a76a587deed0b92c8db53963fe",
+                "sha256:fcda95d0e4f175dc854bc8c499677fe0b26075f327d6aa5c2f05846007fc4249"
+            ],
+            "index": "pypi",
+            "version": "==8.10.15"
         },
         "pytz": {
             "hashes": [
