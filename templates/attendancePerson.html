@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block pageTitle %} | New Person{% endblock pageTitle %}
+
+{% block content %}
+<h2>Create New Person</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Create Person</button>
+</form>
+{% endblock content %}

@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import AttendancePerson , Batch
 
-# Register your models here.
+admin.site.register(AttendancePerson)
+admin.site.register(Batch)

@@ -39,9 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #installed
-    # 'register.apps.RegisterConfig',
-    # 'accounts.apps.AccountsConfig',
     'users.apps.UsersConfig',
+    'attendance.apps.AttendanceConfig',
     'address',
 ]
 
