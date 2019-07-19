@@ -11,6 +11,7 @@ django-address = "*"
 django-phonenumber-field = "*"
 phonenumbers = "*"
 gunicorn = "==19.9.0"
+whitenoise = "==3.3.1"
 
 [requires]
 python_version = "3.7"

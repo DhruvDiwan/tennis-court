@@ -9,9 +9,10 @@ class AttendancePerson(models.Model):
     date_of_birth = models.DateField(null = True, blank = True)
     mobile = PhoneNumberField(null = True, blank = True)
     telephone = PhoneNumberField(null = True, blank = True)
+    # telephone = models.ForeignKey(Telephone, blank = True, null = True, on_delete = models.CASCADE,)
     intercom = models.CharField(null = True, blank = True, max_length=300)
     user = models.ForeignKey(CustomUser, blank = True, null = True, on_delete = models.CASCADE,)
-    # relations = models.ForeignKey(CustomUser, on_delete = models.CASCADE,)
+    # relations = models.ManyToManyField(CustomUser)
 
     def name(self):
         n = self.first_name
@@ -38,3 +39,9 @@ class ClassItem(models.Model):
 class AttendanceList(models.Model):
     student = models.ForeignKey(AttendancePerson, on_delete = models.CASCADE,)
     class_item = models.ForeignKey(ClassItem, on_delete = models.CASCADE,)
+    # date = models.DateField(null = True, blank = True)
+
+
+
+# class Telephone(models.Model):
+#         telephone = PhoneNumberField(null = True, blank = True)
