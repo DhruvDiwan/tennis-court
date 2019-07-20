@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block pageTitle %}Batch Detail{% endblock pageTitle %}
+
+{% block content %}
+<div class=""><a href="{% url 'batch_list' %}">Batches</a></div>
+<div class=""><a href="{% url 'batch_new' %}">Create Batch</a></div>
+<div class=""><a href="{% url 'attendance_person_new' %}">Create Person</a></div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Batches{% endblock title %}
+{% block content %}
+{% for batch in object_list %}
+<div class="card">
+  <div class="card-header">
+    <span class="font-weight-bold">{{ batch.batch_name }}</span> &middot;
+    <span class="text-muted">by {{ batch.title }} |
+      {{ batch.subtitle }}</span>
+    </div>
+    <div class="card-body">
+      <p>{{ batch.body }}</p>
+      <a href="{% url 'batch_edit' batch.pk %}">Edit</a> |
+      <a href="{% url 'batch_delete' batch.pk %}">Delete</a>
+    </div>
+    <div class="card-footer">
+      {% for coach in batch.coaches.all %}
+      <p>
+        <span class="font-weight-bold">{{ coach.last_name }} &middot;</span>
+        {{ coach.first_name }}
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+  <br />
+  {% endfor %}
+  <a href="{% url 'batch_new' %}">Create new batch</a>
+  {% endblock content %}

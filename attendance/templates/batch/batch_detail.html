@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block pageTitle %}Batch Detail{% endblock pageTitle %}
+{% block content %}
+  <div class="batch_entry">
+    <h2>{{ object.batch_name }}</h2>
+    <p>{{ object.title }} | {{ object.subtitle }}</p>
+    <h3>Students</h3>
+    {% for student in batch.students.all %}
+    <p>
+      <span class="font-weight-bold">{{ student.last_name }} &middot;</span>
+      {{ student.first_name }}
+    </p>
+    {% endfor %}
+
+    <h3>Coaches</h3>
+    {% for coach in batch.coaches.all %}
+    <p>
+      <span class="font-weight-bold">{{ coach.last_name }} &middot;</span>
+      {{ coach.first_name }}
+    </p>
+    {% endfor %}
+
+  </div>
+  <p>
+    <a href="{% url 'batch_edit' batch.pk %}">Edit</a> |
+    <a href="{% url 'batch_delete' batch.pk %}">Delete</a></p>
+  <!-- ^^^^ -->
+  <p>Back to <a href="{% url 'batch_list' %}">All Batches</a></p>
+{% endblock content %}
