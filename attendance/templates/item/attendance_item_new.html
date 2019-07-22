@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block pageTitle %}New Item{% endblock pageTitle %}
+
+{% block content %}
+<h2>Create New Item</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Create Item</button>
+</form>
+{% endblock content %}

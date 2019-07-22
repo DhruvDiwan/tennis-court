@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Attendance Items{% endblock title %}
+{% block content %}
+{% for attendance_item in object_list %}
+<div class="card">
+  <div class="card-header">
+    <span class="font-weight-bold">{{ attendance_item }}</span> &middot;
+    <div class="card-body">
+      <a href="{% url 'attendance_item_edit' attendance_item.pk %}">Edit</a> |
+      <a href="{% url 'attendance_item_delete' attendance_item.pk %}">Delete</a>
+    </div>
+  </div>
+  <br />
+  {% endfor %}
+  <a href="{% url 'attendance_item_new' %}">Create new attendance item</a>
+  {% endblock content %}

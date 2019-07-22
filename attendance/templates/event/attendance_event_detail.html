@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block pageTitle %}Attendance Event Detail{% endblock pageTitle %}
+{% block content %}
+  <div class="attendance_event_entry">
+    <h2>{{ object }}</h2>
+  </div>
+  <p>
+    <a href="{% url 'attendance_event_edit' object.pk %}">Edit</a> |
+    <a href="{% url 'attendance_event_delete' object.pk %}">Delete</a></p>
+  <!-- ^^^^ -->
+  <p>Back to <a href="{% url 'attendance_event_list' %}">All Events</a></p>
+{% endblock content %}
