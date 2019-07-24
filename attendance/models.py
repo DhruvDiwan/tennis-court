@@ -51,8 +51,8 @@ class AttendanceEvent(models.Model):
     This is an Attendance Event
     '''
     name = models.CharField(null = True, max_length=300)
-    students = models.ManyToManyField(AttendancePerson)
-    batches = models.ManyToManyField(Batch)
+    students = models.ManyToManyField(AttendancePerson, blank = True)
+    batches = models.ManyToManyField(Batch, blank = True)
     scheduled_date_time = models.DateTimeField(null = True, blank = True)
     execution_date_time = models.DateTimeField(null = True, blank = True)
     # event status options : scheduled , tentative , cancelled , on hold , on going , proposed
@@ -79,6 +79,3 @@ class AttendanceItem(models.Model):
     def __str__(self):
         return '\t'.join([self.student.name() , str(self.attendance_event) , self.status])
 
-
-# class Telephone(models.Model):
-#         telephone = PhoneNumberField(null = True, blank = True)

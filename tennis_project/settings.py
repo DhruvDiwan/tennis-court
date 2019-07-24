@@ -122,6 +122,7 @@ USE_TZ = True
 
 AUTH_USER_MODEL = "users.CustomUser"
 
+LOGIN_URL = '/users/login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 PHONENUMBER_DEFAULT_REGION = 'IN'
